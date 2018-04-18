@@ -1,6 +1,8 @@
 # RPG Maker Data
 *.rvdata2
 
+*.bin
+
 # Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
