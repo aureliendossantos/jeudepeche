@@ -1,0 +1,353 @@
+---
+root:
+- 
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 1
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 2
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 3
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 4
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 5
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 6
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 7
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 8
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 9
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 10
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 11
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 12
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 13
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 14
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 15
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 16
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 17
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 18
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 19
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 20
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 21
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 22
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 23
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 24
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 25
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 26
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 27
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 28
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 29
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 30
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 31
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 32
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 33
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 34
+- !ruby/object:RPG::CommonEvent
+  trigger: 0
+  name: ''
+  switch_id: 1
+  list:
+  - !ruby/object:RPG::EventCommand
+    indent: 0
+    code: 0
+    parameters: []
+  id: 35

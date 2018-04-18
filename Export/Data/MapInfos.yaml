@@ -1,0 +1,16 @@
+---
+root:
+  1: !ruby/object:RPG::MapInfo
+    scroll_x: 272
+    name: Initialisation
+    expanded: false
+    order: 1
+    scroll_y: 208
+    parent_id: 0
+  2: !ruby/object:RPG::MapInfo
+    scroll_x: 272
+    name: Ecran-titre
+    expanded: false
+    order: 2
+    scroll_y: 208
+    parent_id: 0

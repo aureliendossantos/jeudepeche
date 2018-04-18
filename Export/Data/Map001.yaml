@@ -1,0 +1,3396 @@
+---
+root: !ruby/object:RPG::Map
+  parallax_name: ''
+  height: 13
+  events:
+    1: !ruby/object:RPG::Event
+      id: 1
+      name: First-time menu
+      x: 5
+      y: 6
+      pages:
+      - !ruby/object:RPG::Event::Page
+        condition: !ruby/object:RPG::Event::Page::Condition
+          switch1_valid: false
+          switch2_valid: false
+          variable_valid: false
+          self_switch_valid: true
+          item_valid: false
+          actor_valid: false
+          switch1_id: 1
+          switch2_id: 1
+          variable_id: 1
+          variable_value: 0
+          self_switch_ch: D
+          item_id: 1
+          actor_id: 1
+        graphic: !ruby/object:RPG::Event::Page::Graphic
+          tile_id: 0
+          character_name: ''
+          character_index: 0
+          direction: 2
+          pattern: 0
+        move_type: 0
+        move_speed: 3
+        move_frequency: 3
+        move_route: !ruby/object:RPG::MoveRoute
+          repeat: true
+          skippable: false
+          wait: false
+          list:
+          - !ruby/object:RPG::MoveCommand
+            code: 0
+            parameters: []
+        walk_anime: true
+        step_anime: false
+        direction_fix: false
+        through: false
+        priority_type: 0
+        trigger: 3
+        list:
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - 'SV[1] = 139 # Y Menu'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 655
+          parameters:
+          - 'SV[3] = 5 # Transition'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 108
+          parameters:
+          - Input
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :C
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 123
+          parameters:
+          - B
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - "[:C,:RIGHT,:LEFT].include? key_current_rgss(:trigger?)"
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - Graphics.toggle_fullscreen
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 111
+          parameters:
+          - 12
+          - Graphics.fullscreen?
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 355
+          parameters:
+          - Graphics.ratio = 0
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 2
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - "[:C,:RIGHT].include? key_current_rgss(:trigger?)"
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - Graphics.toggle_ratio
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :LEFT
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 111
+          parameters:
+          - 12
+          - "(not Graphics.ratio == 1)"
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 355
+          parameters:
+          - Graphics.ratio = Graphics.ratio - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 111
+          parameters:
+          - 12
+          - Graphics.ratio == 0
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 355
+          parameters:
+          - Graphics.ratio = 1
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :UP
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] -= 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :DOWN
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] += 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] < 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] = 2
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] > 2
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] = 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 108
+          parameters:
+          - Affichage
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 2
+          - A
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - Apparition
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(1, "Commencer le jeu", "menu", 320, SV[1], 100, 100, 0, 0, 1)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(2, "Mode d'affichage", "menu", 320, SV[1]+30, 100, 100, 0, 0,
+            1)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(3, " ", "menu", 320, SV[1]+47, 100, 100, 0, 0, 1)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(4, "Ratio d'affichage", "menu", 320, SV[1]+77, 100, 100, 0,
+            0, 1)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(5, " ", "menu", 320, SV[1]+94, 100, 100, 0, 0, 1)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - 'Graphics.fullscreen? ? mode = "Plein-écran" : mode = "Fenêtré"'
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_change(3, mode)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - 'Graphics.ratio == 0 ? ratio = "Maximum" : ratio = "×" + Graphics.ratio.to_s'
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_change(5, ratio)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_y(1, text_y(1) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(2, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(3, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_y(2, text_y(2) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_y(3, text_y(3) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(4, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(5, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_y(4, text_y(4) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_y(5, text_y(5) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 10
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 123
+          parameters:
+          - A
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - 'Graphics.fullscreen? ? mode = "Plein-écran" : mode = "Fenêtré"'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 655
+          parameters:
+          - text_change(3, mode)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - 'Graphics.ratio == 0 ? ratio = "Maximum" : ratio = "×" + Graphics.ratio.to_s'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 655
+          parameters:
+          - text_change(5, ratio)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(2, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(3, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(4, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(5, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(2, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(3, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(4, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(5, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 2
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(2, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(3, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(4, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(5, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 2
+          - B
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 123
+          parameters:
+          - B
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - Disparition
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(2, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(3, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(4, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(5, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 200, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 200, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 20
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_y(1, text_y(1) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - Let's put in a label we already came here and save it
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - save_game_with_free_name("Init")
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - Go to Title pictures
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SS[6,4] = true
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 123
+          parameters:
+          - D
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 0
+          parameters: []
+    2: !ruby/object:RPG::Event
+      id: 2
+      name: Title menu
+      x: 9
+      y: 6
+      pages:
+      - !ruby/object:RPG::Event::Page
+        condition: !ruby/object:RPG::Event::Page::Condition
+          switch1_valid: false
+          switch2_valid: false
+          variable_valid: false
+          self_switch_valid: true
+          item_valid: false
+          actor_valid: false
+          switch1_id: 1
+          switch2_id: 1
+          variable_id: 1
+          variable_value: 0
+          self_switch_ch: D
+          item_id: 1
+          actor_id: 1
+        graphic: !ruby/object:RPG::Event::Page::Graphic
+          tile_id: 0
+          character_name: ''
+          character_index: 0
+          direction: 2
+          pattern: 0
+        move_type: 0
+        move_speed: 3
+        move_frequency: 3
+        move_route: !ruby/object:RPG::MoveRoute
+          repeat: true
+          skippable: false
+          wait: false
+          list:
+          - !ruby/object:RPG::MoveCommand
+            code: 0
+            parameters: []
+        walk_anime: true
+        step_anime: false
+        direction_fix: false
+        through: false
+        priority_type: 0
+        trigger: 3
+        list:
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - 'SV[1] = 195 # Y Menu'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 655
+          parameters:
+          - 'SV[4] = 465 # X Menu'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 655
+          parameters:
+          - 'SV[3] = 5 # Transition'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 108
+          parameters:
+          - Input
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :C
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 123
+          parameters:
+          - B
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :C
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 123
+          parameters:
+          - B
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 2
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :C
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 123
+          parameters:
+          - B
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :UP
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] -= 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :DOWN
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] += 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] < 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] = 2
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] > 2
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] = 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 108
+          parameters:
+          - Affichage
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 2
+          - A
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - Apparition
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(1, "Commencer", "menu", SV[4]+20, SV[1], 100, 100, 0)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(2, "Options", "menu", SV[4]+46, SV[1]+22, 100, 100, 0)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(3, "Quitter", "menu", SV[4]+50, SV[1]+44, 100, 100, 0)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_x(1, text_x(1) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(2, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_x(2, text_x(2) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(3, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_x(3, text_x(3) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 10
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 123
+          parameters:
+          - A
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(2, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(3, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(2, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(3, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 2
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(2, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(3, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 2
+          - B
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 123
+          parameters:
+          - A
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 123
+          parameters:
+          - B
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 0
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 108
+          parameters:
+          - Commencer
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(2, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 655
+          parameters:
+          - text_opacity(3, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(1, 180, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(1, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(1, 180, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(1, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - picture_opacity(6, 255, 100, false, :InSine)
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 20
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(1, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 655
+          parameters:
+          - text_x(1, text_x(1) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 80
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 108
+          parameters:
+          - Go somewhere
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 1
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 108
+          parameters:
+          - Options
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(1, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 655
+          parameters:
+          - text_opacity(3, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(2, 180, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(2, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(2, 180, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(2, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 20
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(2, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 655
+          parameters:
+          - text_x(2, text_x(2) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 108
+          parameters:
+          - Go to Options menu
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - SS[4,4] = true
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 123
+          parameters:
+          - D
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 2
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 108
+          parameters:
+          - Quit
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(1, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 655
+          parameters:
+          - text_opacity(2, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(3, 180, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(3, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(3, 180, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(3, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - picture_opacity(6, 255, 100, false, :InSine)
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 20
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - text_opacity(3, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 655
+          parameters:
+          - text_x(3, text_x(3) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 230
+          parameters:
+          - 80
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - rm_kill
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 0
+          parameters: []
+    3: !ruby/object:RPG::Event
+      id: 3
+      name: Title rays animation
+      x: 9
+      y: 5
+      pages:
+      - !ruby/object:RPG::Event::Page
+        condition: !ruby/object:RPG::Event::Page::Condition
+          switch1_valid: false
+          switch2_valid: false
+          variable_valid: false
+          self_switch_valid: true
+          item_valid: false
+          actor_valid: false
+          switch1_id: 1
+          switch2_id: 1
+          variable_id: 1
+          variable_value: 0
+          self_switch_ch: D
+          item_id: 1
+          actor_id: 1
+        graphic: !ruby/object:RPG::Event::Page::Graphic
+          tile_id: 0
+          character_name: ''
+          character_index: 0
+          direction: 2
+          pattern: 0
+        move_type: 0
+        move_speed: 3
+        move_frequency: 3
+        move_route: !ruby/object:RPG::MoveRoute
+          repeat: true
+          skippable: false
+          wait: false
+          list:
+          - !ruby/object:RPG::MoveCommand
+            code: 0
+            parameters: []
+        walk_anime: true
+        step_anime: false
+        direction_fix: false
+        through: false
+        priority_type: 0
+        trigger: 4
+        list:
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 230
+          parameters:
+          - 90
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - picture_opacity(4, 0, 180, false, :InOutSine)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - picture_opacity(5, 55, 180, false, :InOutSine)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 230
+          parameters:
+          - 90
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - picture_opacity(2, 0, 180, false, :InOutSine)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - picture_opacity(3, 55, 180, false, :InOutSine)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 230
+          parameters:
+          - 90
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - picture_opacity(4, 55, 180, false, :InOutSine)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - picture_opacity(5, 0, 180, false, :InOutSine)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 230
+          parameters:
+          - 90
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - picture_opacity(2, 55, 180, false, :InOutSine)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - picture_opacity(3, 0, 180, false, :InOutSine)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 0
+          parameters: []
+    4: !ruby/object:RPG::Event
+      id: 4
+      name: Options menu
+      x: 9
+      y: 7
+      pages:
+      - !ruby/object:RPG::Event::Page
+        condition: !ruby/object:RPG::Event::Page::Condition
+          switch1_valid: false
+          switch2_valid: false
+          variable_valid: false
+          self_switch_valid: true
+          item_valid: false
+          actor_valid: false
+          switch1_id: 1
+          switch2_id: 1
+          variable_id: 1
+          variable_value: 0
+          self_switch_ch: D
+          item_id: 1
+          actor_id: 1
+        graphic: !ruby/object:RPG::Event::Page::Graphic
+          tile_id: 0
+          character_name: ''
+          character_index: 0
+          direction: 2
+          pattern: 0
+        move_type: 0
+        move_speed: 3
+        move_frequency: 3
+        move_route: !ruby/object:RPG::MoveRoute
+          repeat: true
+          skippable: false
+          wait: false
+          list:
+          - !ruby/object:RPG::MoveCommand
+            code: 0
+            parameters: []
+        walk_anime: true
+        step_anime: false
+        direction_fix: false
+        through: false
+        priority_type: 0
+        trigger: 3
+        list:
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - 'SV[1] = 195 # Y Menu'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 655
+          parameters:
+          - 'SV[4] = 465 # X Menu'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 655
+          parameters:
+          - 'SV[3] = 5 # Transition'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 108
+          parameters:
+          - Input
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - "[:C,:RIGHT,:LEFT].include? key_current_rgss(:trigger?)"
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - Graphics.toggle_fullscreen
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 111
+          parameters:
+          - 12
+          - Graphics.fullscreen?
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 355
+          parameters:
+          - Graphics.ratio = 0
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - "[:C,:RIGHT].include? key_current_rgss(:trigger?)"
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 355
+          parameters:
+          - Graphics.toggle_ratio
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :LEFT
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 111
+          parameters:
+          - 12
+          - "(not Graphics.ratio == 1)"
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 355
+          parameters:
+          - Graphics.ratio = Graphics.ratio - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 111
+          parameters:
+          - 12
+          - Graphics.ratio == 0
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 355
+          parameters:
+          - Graphics.ratio = 1
+        - !ruby/object:RPG::EventCommand
+          indent: 3
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 2
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :B
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 123
+          parameters:
+          - B
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :UP
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] -= 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - key_current_rgss(:trigger?) == :DOWN
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] += 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] < 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] = 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] > 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SV[2] = 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 108
+          parameters:
+          - Affichage
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 2
+          - A
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - Apparition
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(1, "Mode d'affichage", "menu", SV[4], SV[1], 100, 100, 0)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(2, " ", "menu", SV[4], SV[1]+17, 100, 100, 0)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(3, "Ratio d'affichage", "menu", SV[4], SV[1]+39, 100, 100, 0)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_show(4, " ", "menu", SV[4], SV[1]+56, 100, 100, 0)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - 'Graphics.fullscreen? ? mode = "Plein-écran" : mode = "Fenêtré"'
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_change(2, mode)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - 'Graphics.ratio == 0 ? ratio = "Maximum" : ratio = "×" + Graphics.ratio.to_s'
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_change(4, ratio)
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_x(1, text_x(2) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(2, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_x(2, text_x(2) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(3, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_x(3, text_x(2) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(4, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_x(4, text_x(2) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 10
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 123
+          parameters:
+          - A
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - 'Graphics.fullscreen? ? mode = "Plein-écran" : mode = "Fenêtré"'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 655
+          parameters:
+          - text_change(2, mode)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - 'Graphics.ratio == 0 ? ratio = "Maximum" : ratio = "×" + Graphics.ratio.to_s'
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 655
+          parameters:
+          - text_change(4, ratio)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(2, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(3, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(4, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - SV[2] == 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(2, 140, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(3, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_opacity(4, 255, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 2
+          - B
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 123
+          parameters:
+          - A
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 123
+          parameters:
+          - B
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - Sortie
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(1, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_x(1, text_x(1) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(2, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_x(2, text_x(2) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(3, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_x(3, text_x(3) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - text_opacity(4, 0, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 655
+          parameters:
+          - text_x(4, text_x(4) - 5, SV[3])
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 230
+          parameters:
+          - 5
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - Go to Title menu
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SS[2,4] = true
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 123
+          parameters:
+          - D
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 0
+          parameters: []
+    5: !ruby/object:RPG::Event
+      id: 5
+      name: Initialisation
+      x: 3
+      y: 6
+      pages:
+      - !ruby/object:RPG::Event::Page
+        condition: !ruby/object:RPG::Event::Page::Condition
+          switch1_valid: false
+          switch2_valid: false
+          variable_valid: false
+          self_switch_valid: false
+          item_valid: false
+          actor_valid: false
+          switch1_id: 1
+          switch2_id: 1
+          variable_id: 1
+          variable_value: 0
+          self_switch_ch: A
+          item_id: 1
+          actor_id: 1
+        graphic: !ruby/object:RPG::Event::Page::Graphic
+          tile_id: 0
+          character_name: ''
+          character_index: 0
+          direction: 2
+          pattern: 0
+        move_type: 0
+        move_speed: 3
+        move_frequency: 3
+        move_route: !ruby/object:RPG::MoveRoute
+          repeat: true
+          skippable: false
+          wait: false
+          list:
+          - !ruby/object:RPG::MoveCommand
+            code: 0
+            parameters: []
+        walk_anime: true
+        step_anime: false
+        direction_fix: false
+        through: false
+        priority_type: 0
+        trigger: 3
+        list:
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 111
+          parameters:
+          - 12
+          - '!file_exists?("Init.rvdata2")'
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - first time launch
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - Go to First-time menu
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SS[1,4] = true
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 411
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - if no normal save file
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 408
+          parameters:
+          - "   start the game"
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 408
+          parameters:
+          - else
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 108
+          parameters:
+          - Go to Title pictures
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 355
+          parameters:
+          - SS[6,4] = true
+        - !ruby/object:RPG::EventCommand
+          indent: 1
+          code: 0
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 412
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 214
+          parameters: []
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 0
+          parameters: []
+    6: !ruby/object:RPG::Event
+      id: 6
+      name: Title pictures
+      x: 7
+      y: 6
+      pages:
+      - !ruby/object:RPG::Event::Page
+        condition: !ruby/object:RPG::Event::Page::Condition
+          switch1_valid: false
+          switch2_valid: false
+          variable_valid: false
+          self_switch_valid: true
+          item_valid: false
+          actor_valid: false
+          switch1_id: 1
+          switch2_id: 1
+          variable_id: 1
+          variable_value: 0
+          self_switch_ch: D
+          item_id: 1
+          actor_id: 1
+        graphic: !ruby/object:RPG::Event::Page::Graphic
+          tile_id: 0
+          character_name: ''
+          character_index: 0
+          direction: 2
+          pattern: 0
+        move_type: 0
+        move_speed: 3
+        move_frequency: 3
+        move_route: !ruby/object:RPG::MoveRoute
+          repeat: true
+          skippable: false
+          wait: false
+          list:
+          - !ruby/object:RPG::MoveCommand
+            code: 0
+            parameters: []
+        walk_anime: true
+        step_anime: false
+        direction_fix: false
+        through: false
+        priority_type: 0
+        trigger: 3
+        list:
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - "(1..5).each { |i| text_erase(i) }"
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 108
+          parameters:
+          - Images
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 231
+          parameters:
+          - 1
+          - title
+          - 0
+          - 0
+          - -100
+          - 0
+          - 100
+          - 100
+          - 255
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 231
+          parameters:
+          - 2
+          - raysB
+          - 0
+          - 0
+          - -50
+          - 0
+          - 100
+          - 100
+          - 55
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 231
+          parameters:
+          - 3
+          - raysA
+          - 0
+          - 0
+          - -50
+          - 0
+          - 100
+          - 100
+          - 0
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 231
+          parameters:
+          - 4
+          - raysD
+          - 0
+          - 0
+          - -50
+          - 0
+          - 100
+          - 100
+          - 55
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 231
+          parameters:
+          - 5
+          - raysC
+          - 0
+          - 0
+          - -50
+          - 0
+          - 100
+          - 100
+          - 0
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 231
+          parameters:
+          - 6
+          - noir
+          - 0
+          - 0
+          - 0
+          - 0
+          - 100
+          - 100
+          - 255
+          - 0
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - "(1..5).each { |i| picture_x(i, 0, 300, false, :OutSine) }"
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - picture_opacity(6, 0, 100, false)
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 108
+          parameters:
+          - Activate Title rays animation
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - SS[3,4] = true
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 230
+          parameters:
+          - 200
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 108
+          parameters:
+          - Go to Title menu
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 355
+          parameters:
+          - SS[2,4] = true
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 123
+          parameters:
+          - D
+          - 1
+        - !ruby/object:RPG::EventCommand
+          indent: 0
+          code: 0
+          parameters: []
+  parallax_sx: 0
+  bgm: !ruby/object:RPG::BGM
+    name: ''
+    volume: 100
+    pitch: 100
+  tileset_id: 1
+  encounter_step: 30
+  width: 17
+  data: !ruby/object:Table
+    dim: 3
+    zsize: 4
+    ysize: 13
+    xsize: 17
+    data:
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 2048
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+    - 0
+  bgs: !ruby/object:RPG::BGS
+    name: ''
+    volume: 80
+    pitch: 100
+  parallax_loop_y: false
+  autoplay_bgm: false
+  encounter_list: []
+  autoplay_bgs: false
+  parallax_show: false
+  scroll_type: 0
+  parallax_loop_x: false
+  disable_dashing: false
+  parallax_sy: 0
+  display_name: ''
+  specify_battleback: false
+  note: ''
+  battleback1_name: ''
+  battleback2_name: ''
