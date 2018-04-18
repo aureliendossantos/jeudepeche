@@ -7,7 +7,7 @@ REM ========================================================
 
 REM # The plugin system directory path relative to where this
 REM # file resides (RMVXA project root).
-SET PLUGIN_SYSTEM_ROOT="../jeudepeche/ExportSystem"
+SET PLUGIN_SYSTEM_ROOT="./ExportSystem"
 
 REM # The RMVXA project root path relative to the plugin
 REM # system's root.

@@ -1,0 +1,1 @@
+Kernel.send(:load, 'Scripts/scripts-loader.rb')
